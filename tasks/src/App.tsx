@@ -31,6 +31,7 @@ import {
   updateTask,
 } from "./store/taskSlice";
 import type { AppDispatch, RootState } from "./store/store";
+import "./App.css";
 
 const emptyTask: NewTask = {
   status: "todo",
@@ -69,7 +70,7 @@ function App() {
   const auth = useAuth();
   const dispatch = useDispatch();
   const { activeUserId, filter, items, search, sort } = useSelector(
-    (state: RootState) => state.task
+    (state: RootState) => state.task,
   );
   const visibleTasks = useSelector(selectVisibleTasks);
   const counts = useSelector(selectCounts);
@@ -179,7 +180,7 @@ function App() {
     const csv = rows.map((row) => row.map(quoteCsv).join(",")).join("\n");
     const link = document.createElement("a");
     link.href = `data:text/csv;charset=utf-8,${encodeURIComponent(
-      `\uFEFF${csv}`
+      `\uFEFF${csv}`,
     )}`;
     link.download = "tarefas_teams.csv";
     link.click();

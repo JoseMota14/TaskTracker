@@ -27,6 +27,7 @@ project/
 ```bash
 # Na raiz do projeto
 docker compose up -d
+docker compose up -d --build
 ```
 
 Aguarda ~30 segundos e acede a:

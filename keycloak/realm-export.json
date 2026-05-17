@@ -1,6 +1,6 @@
 {
   "realm": "tarefas",
-  "enable": true,
+  "enabled": true,
   "displayName": "Tarefas",
   "registrationAllowed": false,
   "loginWithEmailAllowed": true,
@@ -8,13 +8,18 @@
     {
       "clientId": "tarefas",
       "name": "Tarefas Web",
-      "enable": true,
+      "enabled": true,
       "publicClient": true,
       "protocol": "openid-connect",
-      "redirectUris": ["http://localhost:3000", "http://localhost:5173"],
+      "redirectUris": [
+        "http://localhost:3000",
+        "http://localhost:3000/*",
+        "http://localhost:5173",
+        "http://localhost:5173/*"
+      ],
       "webOrigins": ["http://localhost:3000", "http://localhost:5173"],
-      "standardFlowEnable": true,
-      "directAccessGrantsEnable": true,
+      "standardFlowEnabled": true,
+      "directAccessGrantsEnabled": true,
       "attributes": {
         "pkce.code.challenge.method": "S256"
       }
@@ -23,7 +28,7 @@
   "users": [
     {
       "username": "demo",
-      "enable": true,
+      "enabled": true,
       "emailVerified": true,
       "firstName": "a",
       "lastName": "b",
